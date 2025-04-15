@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reward Ads App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Earn Points</h1>
+    <p id="points">Points: 0</p>
+    <button onclick="watchAd()">Watch Ad</button>
+
+    <h2>Withdraw Points</h2>
+    <input type="text" id="wallet" placeholder="Enter Bitcoin Wallet">
+    <input type="number" id="withdrawAmount" placeholder="Amount of Points">
+    <button onclick="withdrawPoints()">Submit</button>
+
+    <div id="message"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
