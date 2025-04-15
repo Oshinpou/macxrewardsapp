@@ -1,4 +1,4 @@
-name: Build Android APK
+name: Build Android APK - macxrewardsapp
 
 on:
   push:
@@ -10,28 +10,35 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repo
+    - name: Checkout Repository
       uses: actions/checkout@v3
 
-    - name: Set up Node.js
+    - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
         node-version: 18
 
-    - name: Install Capacitor & Android build tools
+    - name: Install Project Dependencies
       run: |
         npm install
         npm install -g @capacitor/cli
         npm install @capacitor/android
-        npx cap init --web-dir=./
-        npx cap add android
+        npx cap sync
+
+    - name: Add Android Platform (if not already)
+      run: |
+        npx cap add android || echo "Android already exists"
 
     - name: Build Android APK
       run: |
         cd android
         ./gradlew assembleDebug
 
-    - name: Upload APK
+    - name: List APK output files
+      run: |
+        ls -R android/app/build/outputs/apk/debug
+
+    - name: Upload APK Artifact
       uses: actions/upload-artifact@v3
       with:
         name: macxrewardsapp-APK
