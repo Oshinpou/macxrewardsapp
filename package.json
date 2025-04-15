@@ -1,0 +1,13 @@
+{
+  "name": "reward-ads-capacitor",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "npx cap serve"
+  },
+  "dependencies": {
+    "@capacitor/core": "latest"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "latest"
+  }
+}
