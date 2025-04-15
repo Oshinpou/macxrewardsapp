@@ -1,5 +1,5 @@
 {
-  "name": "reward-ads-capacitor",
+  "name": "macxrewardsapp",
   "version": "1.0.0",
   "scripts": {
     "start": "npx cap serve"
