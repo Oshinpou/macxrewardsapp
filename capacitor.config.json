@@ -1,0 +1,6 @@
+{
+  "appId": "com.yourcompany.rewardadsapp",
+  "appName": "RewardAdsApp",
+  "webDir": "./",
+  "bundledWebRuntime": false
+}
